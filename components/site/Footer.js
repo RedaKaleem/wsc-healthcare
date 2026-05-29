@@ -25,9 +25,9 @@ export default function Footer() {
               Enterprise healthcare transformation powered by AI, data interoperability, smart hospital systems and intelligent operations — engineered for billion-dollar healthcare organizations.
             </p>
             <div className="mt-6 space-y-3 text-sm text-[#0a1f17]/80" suppressHydrationWarning>
-              <div className="flex items-center gap-3" suppressHydrationWarning><Mail className="w-4 h-4 text-[#0B6E4F]" /> <span suppressHydrationWarning>enterprise@wschealthcare.com</span></div>
-              <div className="flex items-center gap-3"><Phone className="w-4 h-4 text-[#0B6E4F]" /> +966 11 800 0000</div>
-              <div className="flex items-center gap-3"><MapPin className="w-4 h-4 text-[#0B6E4F]" /> Riyadh · Dubai · London · Singapore</div>
+              <div className="flex items-center gap-3" suppressHydrationWarning><Mail className="w-4 h-4 text-[#0B6E4F]" /> <span suppressHydrationWarning>info@wsc.com.sa</span></div>
+              <div className="flex items-center gap-3"><Phone className="w-4 h-4 text-[#0B6E4F]" /> +966 11 4020500</div>
+              <div className="flex items-center gap-3"><MapPin className="w-4 h-4 text-[#0B6E4F]" /> Riyadh · Egypt · India </div>
             </div>
             <div className="flex items-center gap-3 mt-7">
               {[Linkedin, Twitter, Github].map((Ic, i) => (
