@@ -7,12 +7,68 @@ import Footer from '@/components/site/Footer';
 import Particles from '@/components/site/Particles';
 import Reveal from '@/components/site/Reveal';
 import AnimatedCounter from '@/components/site/AnimatedCounter';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
 
 const leaders = [
-  { name: 'Abdul Rahman Al Sharqi', role: 'Founder & MD', bio: 'Former CMIO of a 30-hospital network. 22 years in healthcare IT and AI.' },
-  { name: 'Mohammed Artil', role: 'Healthcare VP', bio: 'Ex-Google Health. Led clinical LLM and CDS research programs.' },
-  { name: 'TBD', role: 'Technology Head', bio: 'Designed national FHIR fabrics across 4 countries.' },
-  { name: 'Nora Alattas & Nura Al Ajmi', role: 'Sales Team', bio: 'Practicing intensivist and digital health investor.' },
+  {
+    name: 'Abdul Rahman Al Sharqi',
+    role: 'Founder & MD',
+    bio: 'Leads WSC Healthcare strategy, enterprise partnerships and executive transformation programs.',
+    headline: 'Healthcare transformation executive focused on national-scale digital health programs.',
+    focus: ['Executive strategy', 'Healthcare partnerships', 'Digital transformation', 'Enterprise growth'],
+    portfolio: [
+      'Built executive healthcare transformation roadmaps for large public and private-sector programs.',
+      'Led strategic partnerships across hospital groups, ministries, technology vendors and regional health leaders.',
+      'Shaped WSC Healthcare into a delivery partner for AI, interoperability and intelligent operations programs.',
+    ],
+    achievements: ['Founder-led healthcare portfolio', 'Regional enterprise partnerships', 'Board-level transformation advisory'],
+  },
+  {
+    name: 'Mohammed Artil',
+    role: 'Healthcare VP',
+    bio: 'Leads healthcare solution strategy, delivery governance and clinical technology partnerships.',
+    headline: 'Healthcare technology leader connecting clinical workflows with enterprise-grade platforms.',
+    focus: ['Healthcare platforms', 'Clinical operations', 'Solution delivery', 'Client success'],
+    portfolio: [
+      'Directed healthcare technology programs across interoperability, analytics and operational intelligence.',
+      'Designed solution approaches for hospital command centers, data platforms and healthcare automation.',
+      'Partners with client leadership teams to translate clinical priorities into deployable technology programs.',
+    ],
+    achievements: ['Healthcare delivery leadership', 'Clinical workflow modernization', 'Enterprise solution governance'],
+  },
+  {
+    name: 'TBD',
+    role: 'Technology Head',
+    bio: 'Owns architecture, platform engineering and secure delivery standards across healthcare programs.',
+    headline: 'Technology leadership profile reserved for WSC Healthcare platform and architecture ownership.',
+    focus: ['FHIR architecture', 'Cloud infrastructure', 'AI platforms', 'Cybersecurity'],
+    portfolio: [
+      'Defines platform architecture patterns for healthcare data, AI and smart hospital systems.',
+      'Guides cloud, integration and security standards for regulated healthcare deployments.',
+      'Supports technical governance from discovery through implementation and scale-up.',
+    ],
+    achievements: ['Architecture governance', 'Secure delivery standards', 'Healthcare platform engineering'],
+  },
+  {
+    name: 'Nora Alattas & Nura Al Ajmi',
+    role: 'Sales Team',
+    bio: 'Lead client engagement, healthcare account strategy and partner coordination.',
+    headline: 'Client-facing team focused on healthcare relationships, opportunity design and partner alignment.',
+    focus: ['Client engagement', 'Account strategy', 'Partner coordination', 'Healthcare growth'],
+    portfolio: [
+      'Coordinate healthcare client discovery sessions and executive briefings.',
+      'Support proposals, partnership motions and opportunity development across healthcare programs.',
+      'Align clients with WSC Healthcare solution teams for AI, data, infrastructure and operational needs.',
+    ],
+    achievements: ['Healthcare account growth', 'Executive briefing coordination', 'Partner ecosystem alignment'],
+  },
 ];
 
 const timeline = [
@@ -86,15 +142,78 @@ export default function AboutPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {leaders.map((p, i) => (
               <Reveal key={p.name} delay={i * 0.06}>
-                <motion.div whileHover={{ y: -4 }} className="p-6 rounded-xl border border-[#0B6E4F]/10 bg-white hover:border-[#0B6E4F]/30 hover:shadow-[0_20px_50px_-15px_rgba(11,110,79,0.2)] transition">
-                  <div className="aspect-square rounded-lg bg-gradient-to-br from-[#0B6E4F] via-[#053826] to-[#02110a] flex items-center justify-center mb-4 relative overflow-hidden">
-                    <div className="absolute inset-0 dot-grid opacity-20" />
-                    <span className="relative text-5xl font-bold text-white">{p.name.split(' ').map(n => n[0]).slice(0,2).join('')}</span>
-                  </div>
-                  <div className="text-base font-semibold text-[#08130d]">{p.name}</div>
-                  <div className="text-xs text-[#0B6E4F] mt-1 font-medium">{p.role}</div>
-                  <div className="text-xs text-[#0a1f17]/60 mt-3 leading-relaxed">{p.bio}</div>
-                </motion.div>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <motion.button
+                      type="button"
+                      whileHover={{ y: -4 }}
+                      className="group h-full w-full text-left p-6 rounded-xl border border-[#0B6E4F]/10 bg-white hover:border-[#0B6E4F]/30 hover:shadow-[0_20px_50px_-15px_rgba(11,110,79,0.2)] transition focus:outline-none focus:ring-2 focus:ring-[#0B6E4F]/25"
+                    >
+                      <div className="aspect-square rounded-lg bg-gradient-to-br from-[#0B6E4F] via-[#053826] to-[#02110a] flex items-center justify-center mb-4 relative overflow-hidden">
+                        <div className="absolute inset-0 dot-grid opacity-20" />
+                        <span className="relative text-5xl font-bold text-white">{p.name.split(' ').map(n => n[0]).slice(0,2).join('')}</span>
+                      </div>
+                      <div className="text-base font-semibold text-[#08130d]">{p.name}</div>
+                      <div className="text-xs text-[#0B6E4F] mt-1 font-medium">{p.role}</div>
+                      <div className="text-xs text-[#0a1f17]/60 mt-3 leading-relaxed">{p.bio}</div>
+                      <div className="mt-5 text-[11px] font-semibold tracking-[0.18em] uppercase text-[#0B6E4F] opacity-80 group-hover:opacity-100">View portfolio</div>
+                    </motion.button>
+                  </DialogTrigger>
+                  <DialogContent className="max-h-[88vh] max-w-3xl overflow-y-auto rounded-2xl border-[#0B6E4F]/15 bg-white p-0 shadow-[0_30px_90px_-35px_rgba(11,110,79,0.45)]">
+                    <div className="grid md:grid-cols-[240px_1fr]">
+                      <div className="relative min-h-64 bg-gradient-to-br from-[#0B6E4F] via-[#053826] to-[#02110a] p-7 text-white overflow-hidden">
+                        <div className="absolute inset-0 dot-grid opacity-20" />
+                        <div className="relative flex h-28 w-28 items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-5xl font-bold">
+                          {p.name.split(' ').map(n => n[0]).slice(0,2).join('')}
+                        </div>
+                        <div className="relative mt-6 text-[11px] tracking-[0.28em] uppercase text-[#10B981] font-semibold">Portfolio</div>
+                        <div className="relative mt-2 text-2xl font-bold leading-tight">{p.name}</div>
+                        <div className="relative mt-2 text-sm text-white/70">{p.role}</div>
+                      </div>
+                      <div className="p-7 md:p-8">
+                        <DialogHeader>
+                          <DialogTitle className="text-2xl font-bold tracking-tight text-[#08130d]">{p.name}</DialogTitle>
+                          <DialogDescription className="text-[#0a1f17]/65 leading-relaxed">
+                            {p.headline}
+                          </DialogDescription>
+                        </DialogHeader>
+
+                        <div className="mt-7">
+                          <div className="text-[11px] tracking-[0.24em] uppercase text-[#0B6E4F] font-semibold">Focus Areas</div>
+                          <div className="mt-3 flex flex-wrap gap-2">
+                            {p.focus.map(item => (
+                              <span key={item} className="rounded-full border border-[#0B6E4F]/15 bg-[#0B6E4F]/6 px-3 py-1.5 text-xs font-medium text-[#0a1f17]/75">
+                                {item}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div className="mt-7">
+                          <div className="text-[11px] tracking-[0.24em] uppercase text-[#0B6E4F] font-semibold">Selected Portfolio</div>
+                          <div className="mt-3 space-y-3">
+                            {p.portfolio.map(item => (
+                              <div key={item} className="rounded-lg border border-[#0B6E4F]/10 bg-[#f6faf7] p-3 text-sm leading-relaxed text-[#0a1f17]/75">
+                                {item}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div className="mt-7">
+                          <div className="text-[11px] tracking-[0.24em] uppercase text-[#0B6E4F] font-semibold">Highlights</div>
+                          <div className="mt-3 grid sm:grid-cols-3 gap-2">
+                            {p.achievements.map(item => (
+                              <div key={item} className="rounded-lg border border-[#0B6E4F]/10 bg-white px-3 py-3 text-xs font-medium leading-relaxed text-[#0a1f17]/70 shadow-sm">
+                                {item}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </Reveal>
             ))}
           </div>
