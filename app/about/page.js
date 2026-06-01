@@ -20,28 +20,32 @@ const leaders = [
   {
     name: 'Abdul Rahman Al Sharqi',
     role: 'Founder & MD',
-    bio: 'Leads WSC Healthcare strategy, enterprise partnerships and executive transformation programs.',
-    headline: 'Healthcare transformation executive focused on national-scale digital health programs.',
-    focus: ['Executive strategy', 'Healthcare partnerships', 'Digital transformation', 'Enterprise growth'],
+    image: '/abd-al-sharqi.png',
+    bio: 'Commercial executive driving growth, strategic partnerships, and market expansion through innovative ICT solutions aligned with Saudi Vision 2030.',
+    headline: 'Results-driven commercial executive focused on growth, partnerships, and business transformation. Leads market expansion and strategic initiatives that deliver measurable value across Saudi Arabia’s evolving digital landscape.',
+    focus: ['Commercial strategy', 'Strategic partnerships', 'Market Expansion', 'Business growth', 'ICT Solutions Leadership'],
     portfolio: [
-      'Built executive healthcare transformation roadmaps for large public and private-sector programs.',
-      'Led strategic partnerships across hospital groups, ministries, technology vendors and regional health leaders.',
-      'Shaped WSC Healthcare into a delivery partner for AI, interoperability and intelligent operations programs.',
+      'Led revenue growth initiatives across public and private sector markets.',
+      'Built strategic partnerships that generated long-term business value.',
+      'Expanded Watania Solutions’ market presence through targeted commercial strategies.',
+      'Delivered ICT solutions that improved client efficiency and competitive positioning.'
     ],
-    achievements: ['Founder-led healthcare portfolio', 'Regional enterprise partnerships', 'Board-level transformation advisory'],
+    achievements: ['Revenue Growth Leadership', 'Vision 2030 Market Alignment', 'Enterprise Partnership Development', 'Commercial Performance Acceleration'],
   },
   {
     name: 'Mohammed Artil',
     role: 'Healthcare VP',
-    bio: 'Leads healthcare solution strategy, delivery governance and clinical technology partnerships.',
-    headline: 'Healthcare technology leader connecting clinical workflows with enterprise-grade platforms.',
-    focus: ['Healthcare platforms', 'Clinical operations', 'Solution delivery', 'Client success'],
+    image: '/mohammed-artil.png',
+    bio: 'Healthcare executive focused on digital transformation, healthcare innovation, and strategic leadership, delivering large-scale modernization initiatives across healthcare ecosystems.',
+    headline: 'Healthcare transformation leader with over two decades of experience driving digital health, healthcare innovation, hospital strategy, and enterprise transformation programs across global healthcare organizations.',
+    focus: ['Healthcare Strategy', 'Digital Health Transformation', 'Hospital Planning & Operations', 'Healthcare Innovation', 'Executive Leadership'],
     portfolio: [
-      'Directed healthcare technology programs across interoperability, analytics and operational intelligence.',
-      'Designed solution approaches for hospital command centers, data platforms and healthcare automation.',
-      'Partners with client leadership teams to translate clinical priorities into deployable technology programs.',
+      'Led large-scale healthcare transformation and digital health initiatives across public and private healthcare sectors.',
+      'Directed healthcare solutions, hospital planning, and strategic innovation programs aligned with emerging healthcare trends.',
+      'Managed global healthcare programs and enterprise-level transformation projects within leading healthcare organizations.',
+      'Advised healthcare institutions on operational excellence, technology adoption, and sustainable growth strategies.'
     ],
-    achievements: ['Healthcare delivery leadership', 'Clinical workflow modernization', 'Enterprise solution governance'],
+    achievements: ['22+ Years Healthcare Leadership', 'International Healthcare Management ', 'AI & Innovation in Healthcare', 'Lean Six Sigma Black Belt', 'Project Management Professional'],
   },
   {
     name: 'TBD',
@@ -59,15 +63,16 @@ const leaders = [
   {
     name: 'Nora Alattas & Nura Al Ajmi',
     role: 'Sales Team',
-    bio: 'Lead client engagement, healthcare account strategy and partner coordination.',
-    headline: 'Client-facing team focused on healthcare relationships, opportunity design and partner alignment.',
-    focus: ['Client engagement', 'Account strategy', 'Partner coordination', 'Healthcare growth'],
+    bio: 'Healthcare and digital transformation sales professional focused on strategic account management, business development, and client engagement across healthcare and government sectors.',
+    headline: 'Sales professional specializing in healthcare technology, strategic accounts, and digital transformation initiatives across enterprise and government sectors.',
+    focus: ['Strategic Account Management', 'Business Development', 'Client Relationship Management', 'Healthcare Solutions', 'Digital Transformation'],
     portfolio: [
-      'Coordinate healthcare client discovery sessions and executive briefings.',
-      'Support proposals, partnership motions and opportunity development across healthcare programs.',
-      'Align clients with WSC Healthcare solution teams for AI, data, infrastructure and operational needs.',
+      'Managed strategic healthcare and government sector accounts.',
+      'Led sales engagements for AI, IoT, and Command Center solutions.',
+      'Supported digital transformation initiatives through consultative selling.',
+      'Developed client relationships that drove business growth and solution adoption.',
     ],
-    achievements: ['Healthcare account growth', 'Executive briefing coordination', 'Partner ecosystem alignment'],
+    achievements: ['Healthcare Technology Sales', 'Enterprise Account Growth', 'Solution Positioning Expertise', 'Stakeholder Relationship Management'],
   },
 ];
 
@@ -131,12 +136,21 @@ export default function AboutPage() {
           ))}
         </div>
       </section>
-      <section className="relative py-24">
-        <div className="container mx-auto px-6 lg:px-8">
+      <section className="relative py-24 overflow-hidden surface-mute">
+        <div className="absolute inset-0 grid-bg opacity-35 pointer-events-none" />
+        <div className="absolute -top-40 right-[-120px] h-[360px] w-[360px] rounded-full bg-[#10B981]/12 blur-[110px] pointer-events-none" />
+        <div className="absolute bottom-[-160px] left-[-120px] h-[340px] w-[340px] rounded-full bg-[#0B6E4F]/10 blur-[120px] pointer-events-none" />
+        <div className="container mx-auto px-6 lg:px-8 relative">
           <Reveal>
-            <div className="max-w-2xl mb-12">
-              <div className="text-[11px] tracking-[0.32em] uppercase text-[#0B6E4F] mb-4 font-semibold">Leadership</div>
-              <h2 className="text-4xl md:text-5xl font-bold text-[#08130d] tracking-tight leading-[1.05]">Clinicians. Technologists. Operators.</h2>
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+              <div className="max-w-2xl">
+                <div className="text-[11px] tracking-[0.32em] uppercase text-[#0B6E4F] mb-4 font-semibold">Leadership</div>
+                <h2 className="text-4xl md:text-5xl font-bold text-[#08130d] tracking-tight leading-[1.05]">Clinicians. Technologists. Operators.</h2>
+                <p className="mt-5 text-base text-[#0a1f17]/62 leading-relaxed max-w-xl">Meet the team shaping strategy, healthcare delivery, technology architecture and client growth across WSC Healthcare programs.</p>
+              </div>
+              <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[#0B6E4F]/15 bg-white/75 px-4 py-2 text-xs font-semibold tracking-[0.2em] uppercase text-[#0B6E4F] shadow-sm">
+                {leaders.length} Profiles
+              </div>
             </div>
           </Reveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -147,28 +161,47 @@ export default function AboutPage() {
                     <motion.button
                       type="button"
                       whileHover={{ y: -4 }}
-                      className="group h-full w-full text-left p-6 rounded-xl border border-[#0B6E4F]/10 bg-white hover:border-[#0B6E4F]/30 hover:shadow-[0_20px_50px_-15px_rgba(11,110,79,0.2)] transition focus:outline-none focus:ring-2 focus:ring-[#0B6E4F]/25"
+                      className="group h-full w-full text-left rounded-2xl border border-[#0B6E4F]/10 bg-white/90 p-4 shadow-sm transition hover:border-[#0B6E4F]/30 hover:shadow-[0_26px_70px_-30px_rgba(11,110,79,0.42)] focus:outline-none focus:ring-2 focus:ring-[#0B6E4F]/25"
                     >
-                      <div className="aspect-square rounded-lg bg-gradient-to-br from-[#0B6E4F] via-[#053826] to-[#02110a] flex items-center justify-center mb-4 relative overflow-hidden">
+                      <div className="h-56 rounded-xl bg-gradient-to-br from-[#0B6E4F] via-[#053826] to-[#02110a] flex items-center justify-center mb-5 relative overflow-hidden">
                         <div className="absolute inset-0 dot-grid opacity-20" />
-                        <span className="relative text-5xl font-bold text-white">{p.name.split(' ').map(n => n[0]).slice(0,2).join('')}</span>
+                        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#02110a]/70 to-transparent" />
+                        {p.image ? (
+                          <div className="relative h-[86%] w-[70%] overflow-hidden rounded-xl border border-white/25 bg-white shadow-[0_18px_45px_-22px_rgba(0,0,0,0.5)]">
+                            <img src={p.image} alt={p.name} className="h-full w-full object-cover object-top" />
+                          </div>
+                        ) : (
+                          <span className="relative text-5xl font-bold text-white">{p.name.split(' ').map(n => n[0]).slice(0,2).join('')}</span>
+                        )}
                       </div>
-                      <div className="text-base font-semibold text-[#08130d]">{p.name}</div>
-                      <div className="text-xs text-[#0B6E4F] mt-1 font-medium">{p.role}</div>
+                      <div className="flex items-start justify-between gap-3">
+                        <div>
+                          <div className="text-base font-semibold text-[#08130d] leading-snug">{p.name}</div>
+                          <div className="text-xs text-[#0B6E4F] mt-1 font-medium">{p.role}</div>
+                        </div>
+                        <div className="mt-1 h-2 w-2 rounded-full bg-[#10B981] shadow-[0_0_18px_rgba(16,185,129,0.7)]" />
+                      </div>
                       <div className="text-xs text-[#0a1f17]/60 mt-3 leading-relaxed">{p.bio}</div>
-                      <div className="mt-5 text-[11px] font-semibold tracking-[0.18em] uppercase text-[#0B6E4F] opacity-80 group-hover:opacity-100">View portfolio</div>
+                      <div className="mt-5 inline-flex items-center rounded-full bg-[#0B6E4F]/8 px-3 py-1.5 text-[11px] font-semibold tracking-[0.18em] uppercase text-[#0B6E4F] transition group-hover:bg-[#0B6E4F] group-hover:text-white">View portfolio</div>
                     </motion.button>
                   </DialogTrigger>
-                  <DialogContent className="max-h-[88vh] max-w-3xl overflow-y-auto rounded-2xl border-[#0B6E4F]/15 bg-white p-0 shadow-[0_30px_90px_-35px_rgba(11,110,79,0.45)]">
-                    <div className="grid md:grid-cols-[240px_1fr]">
-                      <div className="relative min-h-64 bg-gradient-to-br from-[#0B6E4F] via-[#053826] to-[#02110a] p-7 text-white overflow-hidden">
+                  <DialogContent className="max-h-[88vh] max-w-4xl overflow-y-auto rounded-2xl border-[#0B6E4F]/15 bg-white p-0 shadow-[0_30px_90px_-35px_rgba(11,110,79,0.45)]">
+                    <div className="grid md:grid-cols-[280px_1fr]">
+                      <div className="relative min-h-72 bg-gradient-to-br from-[#0B6E4F] via-[#053826] to-[#02110a] p-7 text-white overflow-hidden">
                         <div className="absolute inset-0 dot-grid opacity-20" />
-                        <div className="relative flex h-28 w-28 items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-5xl font-bold">
-                          {p.name.split(' ').map(n => n[0]).slice(0,2).join('')}
+                        <div className="absolute -bottom-20 -right-20 h-48 w-48 rounded-full bg-[#10B981]/20 blur-3xl" />
+                        <div className="relative flex h-36 w-28 items-center justify-center overflow-hidden rounded-xl border border-white/25 bg-white/10 text-5xl font-bold shadow-[0_18px_45px_-24px_rgba(0,0,0,0.65)]">
+                          {p.image ? (
+                            <img src={p.image} alt={p.name} className="h-full w-full object-cover object-top" />
+                          ) : (
+                            p.name.split(' ').map(n => n[0]).slice(0,2).join('')
+                          )}
                         </div>
                         <div className="relative mt-6 text-[11px] tracking-[0.28em] uppercase text-[#10B981] font-semibold">Portfolio</div>
                         <div className="relative mt-2 text-2xl font-bold leading-tight">{p.name}</div>
                         <div className="relative mt-2 text-sm text-white/70">{p.role}</div>
+                        <div className="relative mt-6 h-px bg-white/15" />
+                        <div className="relative mt-5 text-xs leading-relaxed text-white/62">Focused on measurable transformation, practical delivery and long-term healthcare value.</div>
                       </div>
                       <div className="p-7 md:p-8">
                         <DialogHeader>

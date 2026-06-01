@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { Menu, X, ChevronRight } from 'lucide-react';
 import Logo from './Logo';
+import ThemeToggle from './ThemeToggle';
 
 const nav = [
   { href: '/', label: 'Home' },
@@ -42,13 +43,17 @@ export default function Navbar() {
           })}
         </nav>
         <div className="hidden lg:flex items-center gap-3">
+          <ThemeToggle />
           <Link href="/contact" className="group relative inline-flex items-center gap-2 text-[13px] font-semibold pl-5 pr-4 py-3 rounded-full bg-gradient-to-r from-[#0B6E4F] to-[#022C1F] text-white green-glow-sm hover:from-[#10785a] hover:to-[#053826] transition-all">
             Book Consultation <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition" />
           </Link>
         </div>
-        <button className="lg:hidden text-[#0a1f17] p-2 rounded-full border border-[#0B6E4F]/10 bg-white/65" onClick={() => setOpen(o => !o)} aria-label="menu">
-          {open ? <X /> : <Menu />}
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          <ThemeToggle />
+          <button className="text-[#0a1f17] p-2 rounded-full border border-[#0B6E4F]/10 bg-white/65 dark:border-white/10 dark:bg-white/10 dark:text-white/85" onClick={() => setOpen(o => !o)} aria-label="menu">
+            {open ? <X /> : <Menu />}
+          </button>
+        </div>
       </div>
       {open && (
         <div className="container mx-auto mt-2 lg:hidden rounded-2xl border border-[#0B6E4F]/10 bg-white/95 shadow-[0_18px_45px_-30px_rgba(11,110,79,0.55)] backdrop-blur-xl">

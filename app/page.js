@@ -5,9 +5,9 @@ import {
   ArrowRight, ChevronRight, Sparkles, Activity, ShieldCheck, Cpu, Globe2,
   BarChart3, Workflow, Brain, HeartPulse, Database, CloudCog, Stethoscope, Hospital,
   CheckCircle2, Zap, Network, LineChart, Layers, GitBranch, Quote, Star,
-  Users, Server, MonitorPlay, TrendingUp
+  TrendingUp
 } from 'lucide-react';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import Navbar from '@/components/site/Navbar';
 import Footer from '@/components/site/Footer';
 import Particles from '@/components/site/Particles';
@@ -326,157 +326,6 @@ function WhyChooseUs() {
   );
 }
 
-// ====== ENHANCED ECOSYSTEM SECTION ======
-function Ecosystem() {
-  const layers = [
-    { t: 'Engagement', Ic: Users, desc: 'Front-line digital experiences for patients, physicians and care teams.', items: ['Patient Portals','Physician Portals','Contact Center AI','Mobile Apps','Member Engagement'], count: '15+', metric: 'Touchpoints', kpi: '+34% access' },
-    { t: 'Intelligence', Ic: Brain, desc: 'Generative AI, predictive ML and autonomous agents embedded in every workflow.', items: ['Clinical AI','Generative AI','Predictive Analytics','AI Agents','Copilots'], count: '180+', metric: 'AI Models', kpi: '93% accuracy' },
-    { t: 'Applications', Ic: MonitorPlay, desc: 'Domain-specific healthcare applications that drive clinical and operational value.', items: ['LIS','Pathology','Blood Bank','RCM','Smart Hospital OS','LIMS','Pharmacy'], count: '21', metric: 'Modules', kpi: '99.99% SLA' },
-    { t: 'Data Fabric', Ic: Database, desc: 'A FHIR-native, real-time data layer unifying every clinical and operational source.', items: ['FHIR / HL7','Unified Patient Record','Data Governance','Real-time Streaming','HIE'], count: '950+', metric: 'Integrations', kpi: '<200ms latency' },
-    { t: 'Infrastructure', Ic: Server, desc: 'AI-ready hybrid cloud and edge infrastructure engineered for regulated workloads.', items: ['Hybrid Cloud','Edge AI','IoMT Gateways','Security & Compliance','Sovereign Cloud'], count: '5', metric: 'Cloud Tiers', kpi: 'ISO / HITRUST' },
-  ];
-  const [active, setActive] = useState(1);
-  const cur = layers[active];
-  const Ic = cur.Ic;
-  return (
-    <section className="relative py-28 overflow-hidden mesh-soft">
-      <div className="absolute inset-0 pattern-ring opacity-40" />
-      <div className="absolute -top-40 right-0 w-[500px] h-[500px] bg-[#10B981]/8 rounded-full blur-[140px] pointer-events-none" />
-      <div className="container mx-auto px-6 lg:px-8 relative">
-        <Reveal>
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
-            <div className="max-w-2xl">
-              <div className="text-[11px] tracking-[0.32em] uppercase text-[#0B6E4F] mb-4 font-semibold">Healthcare Technology Ecosystem</div>
-              <h2 className="text-4xl md:text-5xl font-bold text-[#08130d] tracking-tight leading-[1.05]">A composable enterprise platform — from cloud to clinician.</h2>
-              <p className="mt-5 text-[#0a1f17]/60 text-lg leading-relaxed max-w-xl">Five interconnected layers, one unified architecture. Click any layer to explore the technology stack and capabilities.</p>
-            </div>
-            <div className="flex gap-3">
-              {[
-                { v: '21', l: 'Modules' },
-                { v: '950+', l: 'Integrations' },
-                { v: '180+', l: 'AI Models' },
-              ].map(s => (
-                <div key={s.l} className="px-4 py-3 rounded-xl bg-gradient-to-b from-white to-[#f4faf6] border border-[#0B6E4F]/12">
-                  <div className="text-xl font-bold text-gradient-emerald">{s.v}</div>
-                  <div className="text-[10px] text-[#0a1f17]/55 uppercase tracking-widest font-medium">{s.l}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Reveal>
-        <div className="grid lg:grid-cols-12 gap-6">
-          {/* Layered stack visual */}
-          <div className="lg:col-span-7">
-            <div className="relative rounded-2xl bg-gradient-to-br from-[#f6faf7] to-white border border-[#0B6E4F]/10 p-6 lg:p-8 overflow-hidden">
-              <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
-              <div className="relative space-y-2">
-                {layers.map((l, i) => {
-                  const isActive = i === active;
-                  const ItemIc = l.Ic;
-                  return (
-                    <motion.button
-                      key={l.t}
-                      onClick={() => setActive(i)}
-                      onMouseEnter={() => setActive(i)}
-                      whileHover={{ x: 4 }}
-                      className={`w-full text-left relative group rounded-xl transition-all duration-300 overflow-hidden ${isActive ? 'bg-gradient-to-r from-[#0B6E4F] to-[#022C1F] text-white green-glow-sm scale-[1.02]' : 'bg-white border border-[#0B6E4F]/10 hover:border-[#0B6E4F]/30'}`}
-                      style={{ marginLeft: `${i * 14}px`, marginRight: `${(layers.length - 1 - i) * 14}px` }}
-                    >
-                      <div className={`absolute left-0 top-0 bottom-0 w-1 ${isActive ? 'bg-[#10B981]' : 'bg-[#0B6E4F]/40'}`} />
-                      <div className="flex items-center gap-5 p-5 pl-7">
-                        <div className={`w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0 ${isActive ? 'bg-white/15' : 'bg-[#0B6E4F]/8'}`}>
-                          <ItemIc className={`w-5 h-5 ${isActive ? 'text-white' : 'text-[#0B6E4F]'}`} strokeWidth={1.6} />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-2">
-                            <span className={`text-[10px] tracking-[0.28em] uppercase font-semibold ${isActive ? 'text-[#10B981]' : 'text-[#0B6E4F]'}`}>L{i + 1}</span>
-                            <span className={`text-[10px] tracking-wider uppercase ${isActive ? 'text-white/55' : 'text-[#0a1f17]/40'}`}>{l.count} {l.metric}</span>
-                          </div>
-                          <div className={`text-lg font-semibold mt-0.5 truncate ${isActive ? 'text-white' : 'text-[#08130d]'}`}>{l.t}</div>
-                        </div>
-                        <div className={`hidden md:flex items-center gap-2 text-xs ${isActive ? 'text-white/80' : 'text-[#0a1f17]/50'}`}>
-                          <Sparkles className="w-3.5 h-3.5" /> {l.kpi}
-                        </div>
-                        <ChevronRight className={`w-4 h-4 transition-transform ${isActive ? 'text-white translate-x-1' : 'text-[#0a1f17]/30'}`} />
-                      </div>
-                    </motion.button>
-                  );
-                })}
-              </div>
-              <div className="relative mt-6 flex justify-center">
-                <svg viewBox="0 0 600 36" className="w-full h-9">
-                  <defs>
-                    <linearGradient id="flowG" x1="0" x2="1">
-                      <stop offset="0" stopColor="#0B6E4F" stopOpacity="0" />
-                      <stop offset="0.5" stopColor="#10B981" />
-                      <stop offset="1" stopColor="#0B6E4F" stopOpacity="0" />
-                    </linearGradient>
-                  </defs>
-                  <line x1="20" y1="18" x2="580" y2="18" stroke="url(#flowG)" strokeWidth="2" />
-                  {[0,1,2,3,4,5,6].map(i => (
-                    <circle key={i} r="3" fill="#10B981">
-                      <animateMotion dur="3.5s" repeatCount="indefinite" begin={`${i*0.5}s`} path="M20,18 L580,18" />
-                    </circle>
-                  ))}
-                </svg>
-              </div>
-              <div className="text-center text-[10px] tracking-[0.3em] uppercase text-[#0a1f17]/40 mt-1 font-medium">Bidirectional FHIR-native data flow</div>
-            </div>
-          </div>
-          {/* Detail panel */}
-          <div className="lg:col-span-5">
-            <motion.div key={active} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="h-full rounded-2xl p-7 bg-gradient-to-br from-[#0a1f17] to-[#02110a] text-white relative overflow-hidden green-glow">
-              <div className="absolute inset-0 dot-grid opacity-15" />
-              <div className="absolute -top-32 -right-32 w-72 h-72 bg-[#10B981]/22 rounded-full blur-3xl" />
-              <div className="relative">
-                <div className="flex items-center justify-between">
-                  <div className="text-[11px] tracking-[0.3em] uppercase text-[#10B981] font-semibold">Active Layer</div>
-                  <span className="text-xs text-white/40 font-mono">L{active + 1} / {layers.length}</span>
-                </div>
-                <div className="mt-5 flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#10B981] to-[#0B6E4F] flex items-center justify-center">
-                    <Ic className="w-7 h-7 text-white" strokeWidth={1.5} />
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-white">{cur.t}</div>
-                    <div className="text-xs text-white/55 mt-0.5">{cur.count} {cur.metric} · {cur.kpi}</div>
-                  </div>
-                </div>
-                <p className="mt-5 text-white/65 text-sm leading-relaxed">{cur.desc}</p>
-                <div className="mt-6 pt-6 border-t border-white/10">
-                  <div className="text-[10px] tracking-[0.3em] uppercase text-white/40 mb-3 font-semibold">Core Capabilities</div>
-                  <div className="flex flex-wrap gap-2">
-                    {cur.items.map(it => (
-                      <span key={it} className="text-xs px-2.5 py-1.5 rounded-md bg-white/8 border border-white/10 text-white/90">{it}</span>
-                    ))}
-                  </div>
-                </div>
-                <div className="mt-6 grid grid-cols-3 gap-3">
-                  <div className="text-center p-3 rounded-lg bg-white/5">
-                    <div className="text-lg font-bold text-[#10B981]">{cur.count}</div>
-                    <div className="text-[9px] tracking-wider uppercase text-white/50 mt-1">{cur.metric}</div>
-                  </div>
-                  <div className="text-center p-3 rounded-lg bg-white/5">
-                    <div className="text-lg font-bold text-[#10B981]">99.9%</div>
-                    <div className="text-[9px] tracking-wider uppercase text-white/50 mt-1">Uptime</div>
-                  </div>
-                  <div className="text-center p-3 rounded-lg bg-white/5">
-                    <div className="text-lg font-bold text-[#10B981]">24/7</div>
-                    <div className="text-[9px] tracking-wider uppercase text-white/50 mt-1">Managed</div>
-                  </div>
-                </div>
-                <Link href="/technology" className="mt-6 inline-flex items-center gap-2 text-sm text-[#10B981] hover:gap-3 transition-all font-medium">
-                  Explore architecture <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function ServicesGrid() {
   const featured = services.slice(0, 9);
   return (
@@ -730,7 +579,6 @@ export default function App() {
       <PartnersStrip />
       <AboutDivision />
       <WhyChooseUs />
-      <Ecosystem />
       <AccuracyChart />
       <ServicesGrid />
       <Architecture />
